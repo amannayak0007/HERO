@@ -49,6 +49,9 @@ class PostStoryVC: UIViewController,UITextViewDelegate,UITextFieldDelegate,UIIma
     override func viewDidAppear(_ animated: Bool) {
         enableKeyboardHideOnTap()
         
+        IQKeyboardManager.shared().isEnabled = false
+        IQKeyboardManager.shared().isEnableAutoToolbar = false
+        
         self.toolbarBottomConstraintInitialValue = toolbarBottomConstraint.constant
         newTweetTextView.becomeFirstResponder()
     }

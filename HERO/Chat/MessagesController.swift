@@ -34,6 +34,7 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 class MessagesController: UITableViewController {
 
     let cellId = "cellId"
+    var loggedInUserData:NSDictionary?
     
     override func viewDidLoad() {
         super.viewDidLoad()

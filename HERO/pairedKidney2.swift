@@ -48,7 +48,7 @@ class pairedKidney2: UIViewController, MFMessageComposeViewControllerDelegate {
         
         if (MFMessageComposeViewController.canSendText()) {
             let controller = MFMessageComposeViewController()
-            controller.body = "Hello! \(donorModel.fullName!) invited you to join Hero."
+            controller.body = "Hello! \(donorModel.fullName!) invited you to join Hero. Bit.ly/HeroApp #HERO"
             controller.recipients = []
             controller.messageComposeDelegate = self
             self.present(controller, animated: true, completion: nil)

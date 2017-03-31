@@ -204,7 +204,7 @@ class SearchProfileViewController: UIViewController, MFMailComposeViewController
 //    }
     
     @IBAction func imessage(_ sender: AnyObject) {
-        let textToShare = "Read about \((user?.displayName)!)'s story on the Hero App. Anyone can be Hero! #HERO"
+        let textToShare = "Read about \((user?.displayName)!)'s story on the Hero App. Anyone can be Hero! Bit.ly/HeroApp #HERO"
         
         if let myWebsite = NSURL(string: "www.heroapp.life") {
             let objectsToShare = [textToShare, myWebsite] as [Any]

@@ -11,10 +11,13 @@ import MessageUI
 import Firebase
 import FBSDKCoreKit
 import FBSDKLoginKit
+import UserNotifications
 
 class settingsTVC: UITableViewController, MFMailComposeViewControllerDelegate, FCAlertViewDelegate {
 
     var donor: Bool?
+    
+    @IBOutlet weak var myswitch: UISwitch!
     
     let alertView: FCAlertView = {
         let alert = FCAlertView(type: .warning)
@@ -28,14 +31,47 @@ class settingsTVC: UITableViewController, MFMailComposeViewControllerDelegate, F
         self.title = "Settings"
     
         alertView.delegate = self
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if UIApplication.shared.isRegisteredForRemoteNotifications {
+            self.myswitch.isOn = true
+            
+        }else{
+            self.myswitch.isOn = false
+        }
      
-//        self.title = "Settings"
-//        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName : UIFont(name: "Avenir Medium", size: 20)!]
-//    
+    }
+    
+    @IBAction func switchPressed(_ sender: Any) {
+        if myswitch.isOn {
+            UIApplication.shared.unregisterForRemoteNotifications()
+            myswitch.isOn = false
+        } else {
+            notificationPermission()
+            myswitch.isOn = true
+            
+        }
+    }
+    
+    func notificationPermission() {
+        if #available(iOS 10.0, *) {
+            
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: {_, _ in })
+            
+        } else {
+            let settings: UIUserNotificationSettings =
+                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            UIApplication.shared.registerUserNotificationSettings(settings)
+        }
+        
+        UIApplication.shared.registerForRemoteNotifications()
     }
     
     @IBAction func signOutPressed(_ sender: Any) {
@@ -54,11 +90,13 @@ class settingsTVC: UITableViewController, MFMailComposeViewControllerDelegate, F
         if title == "Sign Out" {
             
             SVProgressHUD.show()
-            try! FIRAuth.auth()?.signOut()
-            FBSDKAccessToken.setCurrent(nil)  //facebook
+             Fire.shared.updateUserWithKeyAndValue("notiToken", value: "" as AnyObject, completionHandler: nil) //set notification token to empty string
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 
+                try! FIRAuth.auth()?.signOut()
+                FBSDKAccessToken.setCurrent(nil)  //facebook
+
 //                let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 //                let vc: LoginViewController = storyboard.instantiateViewController(withIdentifier: "login") as! LoginViewController
 //                vc.modalPresentationStyle = .custom
@@ -95,7 +133,7 @@ class settingsTVC: UITableViewController, MFMailComposeViewControllerDelegate, F
             return 1
         }else if section == 4 {
             
-            return 3
+            return 2
         }else {
             
             return 0
@@ -120,6 +158,14 @@ class settingsTVC: UITableViewController, MFMailComposeViewControllerDelegate, F
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }
+    }
+    
+    @IBAction func termsPressed(_ sender: UIButton){
+    
+    let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    let vc = storyboard.instantiateViewController(withIdentifier: "termsNav")
+    self.present(vc, animated: true, completion: nil)
+    
     }
     
     //Send Feedback

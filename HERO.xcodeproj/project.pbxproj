@@ -46,6 +46,8 @@
 		1F41946A1E7977DD000490D7 /* tabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4194691E7977DD000490D7 /* tabbarVC.swift */; };
 		1F4567F01DBE65CA00EE39E7 /* Camp1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4567EF1DBE65CA00EE39E7 /* Camp1ViewController.swift */; };
 		1F4567F21DBE65E100EE39E7 /* Camp2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4567F11DBE65E100EE39E7 /* Camp2ViewController.swift */; };
+		1F4980A21E8D0BB80000EF82 /* termsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4980A11E8D0BB80000EF82 /* termsVC.swift */; };
+		1F4980A41E8D11780000EF82 /* terms.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1F4980A31E8D11780000EF82 /* terms.pdf */; };
 		1F507B7A1DB75FCE00A36AB1 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F507B791DB75FCE00A36AB1 /* SearchTableViewCell.swift */; };
 		1F5515911E700949009B59E9 /* PostStoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5515901E700949009B59E9 /* PostStoryVC.swift */; };
 		1F7834491E50C650002E5ED7 /* questions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7834481E50C650002E5ED7 /* questions.storyboard */; };
@@ -186,6 +188,8 @@
 		1F44B9731E87926800491AA3 /* HERO.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HERO.entitlements; sourceTree = "<group>"; };
 		1F4567EF1DBE65CA00EE39E7 /* Camp1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camp1ViewController.swift; sourceTree = "<group>"; };
 		1F4567F11DBE65E100EE39E7 /* Camp2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camp2ViewController.swift; sourceTree = "<group>"; };
+		1F4980A11E8D0BB80000EF82 /* termsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = termsVC.swift; sourceTree = "<group>"; };
+		1F4980A31E8D11780000EF82 /* terms.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = terms.pdf; sourceTree = "<group>"; };
 		1F507B791DB75FCE00A36AB1 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		1F5515901E700949009B59E9 /* PostStoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostStoryVC.swift; sourceTree = "<group>"; };
 		1F7834481E50C650002E5ED7 /* questions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = questions.storyboard; sourceTree = "<group>"; };
@@ -365,6 +369,7 @@
 				1FB61E281E6B0A480023A79A /* settingsTVC.swift */,
 				1FB9E4331E81A24F00405056 /* editInfoTVC.swift */,
 				1F1CE30E1E73056400B0170C /* enterStoryVC.swift */,
+				1F4980A11E8D0BB80000EF82 /* termsVC.swift */,
 				1F2590031E6F2FC5003FD2F5 /* socialVC */,
 				1F895FC81E6C82D800AB120F /* campaignVC */,
 				1F7834591E50E421002E5ED7 /* API */,
@@ -451,6 +456,7 @@
 		1F27E91C1DB9EF95004E1064 /* Supporting File */ = {
 			isa = PBXGroup;
 			children = (
+				1F4980A31E8D11780000EF82 /* terms.pdf */,
 				1FFA6F8D1E8632FC0026D28E /* AutoComplete */,
 				1F0893501E82CBA00061FBDA /* SplachScreenAnimationViewController.swift */,
 				1F8B83941E80597300A789DA /* Font */,
@@ -802,6 +808,7 @@
 				1FFA6F9D1E8632FC0026D28E /* DefaultAutoCompleteCell.xib in Resources */,
 				1F02BE451D9F54C000817F66 /* Assets.xcassets in Resources */,
 				1F27E9191DB9EC40004E1064 /* SVProgressHUD.bundle in Resources */,
+				1F4980A41E8D11780000EF82 /* terms.pdf in Resources */,
 				1FCA0B591DB917CA00CC9BE8 /* checkmark-round.png in Resources */,
 				1F02BE431D9F54C000817F66 /* Main.storyboard in Resources */,
 				1FCA0B581DB917CA00CC9BE8 /* alert-round.png in Resources */,
@@ -906,6 +913,7 @@
 				1F27E9181DB9EC40004E1064 /* SVIndefiniteAnimatedView.m in Sources */,
 				1F41946A1E7977DD000490D7 /* tabbarVC.swift in Sources */,
 				1F9F287E1E67094700C5FCD3 /* heroInfoVC.swift in Sources */,
+				1F4980A21E8D0BB80000EF82 /* termsVC.swift in Sources */,
 				1F1945A81DABA9480091FDC4 /* SJSegmentedScrollView.swift in Sources */,
 				1F889B651DC881B600DEC2DD /* SearchRootViewController.swift in Sources */,
 				1FEAFB5E1E8583B10062715A /* pairedKidney2.swift in Sources */,
@@ -1095,7 +1103,7 @@
 				CODE_SIGN_ENTITLEMENTS = HERO/HERO.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LV9HVN9QY7;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKLoginKit",
@@ -1105,6 +1113,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Heroapp.Life;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "HERO-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1120,8 +1130,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = HERO/HERO.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = LV9HVN9QY7;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKLoginKit",
@@ -1131,6 +1141,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Heroapp.Life;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "HERO-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

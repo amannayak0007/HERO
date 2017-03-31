@@ -28,6 +28,7 @@ class NewMessageController: UITableViewController {
         tableView.register(UserCell.self, forCellReuseIdentifier: cellId)
         tableView.tableFooterView = UIView()
         
+        searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.delegate = self
         definesPresentationContext = true
         searchController.dimsBackgroundDuringPresentation = false
@@ -186,7 +187,9 @@ class NewMessageController: UITableViewController {
     var messagesController: MessagesController?
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        dismiss(animated: true) {
+        searchController.dismiss(animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        self.dismiss(animated: true) {
            //print("Dismiss completed")
             
             if self.searchActive && self.searchController.searchBar.text != ""{
@@ -200,10 +203,11 @@ class NewMessageController: UITableViewController {
             
             //you're sending the user in from the newMessageController to messagesController and then chatLogController
         }
+      }
     }
 }
-    
-    extension NewMessageController: UISearchBarDelegate {
+
+extension NewMessageController: UISearchBarDelegate {
         
         func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
             

@@ -29,7 +29,7 @@ class Message: NSObject {
     init(dictionary: [String: AnyObject]) {
         super.init()
         
-        displayName = dictionary["dispplayName"] as? String
+        displayName = dictionary["displayName"] as? String
         fromId = dictionary["fromId"] as? String
         text = dictionary["text"] as? String
         timestamp = dictionary["timestamp"] as? NSNumber

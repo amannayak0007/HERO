@@ -42,10 +42,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Thread.sleep(forTimeInterval: 1.2) //launch screen time delay
         
         FIRApp.configure()
-        FIRDatabase.database().persistenceEnabled = true
+//        FIRDatabase.database().persistenceEnabled = true
         
         // For iOS 10 display notification (sent via APNS)
-        UNUserNotificationCenter.current().delegate = self
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().delegate = self
+        } else {
+            // Fallback on earlier versions
+        }
         
         // For iOS 10 data message (sent via FCM)
         FIRMessaging.messaging().remoteMessageDelegate = self
@@ -66,6 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         FBSDKAppEvents.activateApp()
         connectToFcm()
+        application.applicationIconBadgeNumber = 0
     }
     
     // [START disconnect_from_fcm]
@@ -124,7 +129,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // the InstanceID token.
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         print("APNs token retrieved: \(deviceToken)")
-        
+       
+        if let refreshedToken = FIRInstanceID.instanceID().token() {
+//            print("InstanceID token: \(refreshedToken)")
+            
+            Fire.shared.updateUserWithKeyAndValue("notiToken", value: "\(refreshedToken)" as AnyObject, completionHandler: nil)
+        }
         
         // With swizzling disabled you must set the APNs token here.
         // FIRInstanceID.instanceID().setAPNSToken(deviceToken, type: FIRInstanceIDAPNSTokenType.sandbox)

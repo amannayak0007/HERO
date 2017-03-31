@@ -202,7 +202,7 @@ class MatchesViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     func Pulse(){
     
-        let blackOverlay = UIView(frame: mapView.frame)
+        let blackOverlay = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
         blackOverlay.layer.backgroundColor = UIColor.black.cgColor
         blackOverlay.layer.opacity = 0.8
         self.view!.addSubview(blackOverlay)
