@@ -92,11 +92,11 @@ class NewMessageController: UITableViewController {
         FIRDatabase.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
             
             if let dictionary = snapshot.value as? [String: AnyObject] {
-                let user = User()
+                let user = User(dictionary: dictionary)
                 user.id = snapshot.key //gets ID from the user
                 
                 //if you use this setter, your app will crash if your class properties don't exavtly match up with the Firebase dictionary keys
-                user.setValuesForKeys(dictionary)
+//                user.setValuesForKeys(dictionary)
                 self.users.append(user)
                 
                 //relaoding without dispatching queue will crash because of background thread so you need to dispatch_async

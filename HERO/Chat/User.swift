@@ -45,4 +45,43 @@ class User: NSObject {
     var notiToken: String?
     var disease = [NSMutableArray]()
     
+    init(dictionary: [String: AnyObject]) {
+        super.init()
+        
+//        id = dictionary["id"] as? String
+        displayName = dictionary["displayName"] as? String
+        email = dictionary["email"] as? String
+//        password = dictionary["password"] as? String
+        image = dictionary["image"] as? String
+        Gender = dictionary["Gender"] as? String
+        DOB = dictionary["DOB"] as? String
+        createdAt = dictionary["createdAt"] as? NSNumber
+        Organ = dictionary["Organ"] as? String
+        Phone = dictionary["Phone"] as? String
+        State = dictionary["State"] as? String
+        City = dictionary["City"] as? String
+//        Amount = dictionary["Amount"] as? String
+//        CampaignTitle = dictionary["CampaignTitle"] as? String
+//        CampPeriod = dictionary["CampPeriod"] as? String
+        uid = dictionary["uid"] as? String
+//        social = dictionary["social"] as? String
+        donorORrecipient = dictionary["donorORrecipient"] as? String
+        height = dictionary["height"] as? String
+        weight = dictionary["weight"] as? String
+//        BMI = dictionary["BMI"] as? String
+        bloodtype = dictionary["bloodtype"] as? String
+        ethnicity = dictionary["ethnicity"] as? String
+        maritalstatus = dictionary["maritalstatus"] as? String
+        smoke = dictionary["smoke"] as? String
+        drink = dictionary["drink"] as? String
+        drug = dictionary["drug"] as? String
+        drugName = dictionary["drugName"] as? String
+        story = dictionary["story"] as? String
+        latitude = dictionary["latitude"] as? AnyObject
+        longitude = dictionary["longitude"] as? AnyObject
+        pairedUID = dictionary["pairedUID"] as? String
+        notiToken = dictionary["notiToken"] as? String
+//        disease = dictionary["disease"] as? [NSMutableArray]()
+    }
+    
 }

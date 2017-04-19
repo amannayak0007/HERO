@@ -20,6 +20,7 @@
 
 @property (nonatomic, strong) AVPlayerLayer *playerLayer;
 
+
 @end
 
 @implementation ZWIntroductionViewController
@@ -137,6 +138,7 @@
         self.enterButton.frame = [self frameOfEnterButton];
     }
     
+
     [self.enterButton addTarget:self action:@selector(enter:) forControlEvents:UIControlEventTouchUpInside];    
     self.enterButton.alpha = 0;
     [self.view addSubview:self.enterButton];
@@ -258,11 +260,22 @@
     CGSize size = self.enterButton.bounds.size;
     if (CGSizeEqualToSize(size, CGSizeZero)) {
 //        size = CGSizeMake(self.view.frame.size.width * 0.6, 50);
-        size = CGSizeMake(self.view.frame.size.width * 0.6, 60);
+        NSRange ipadRange = [[[UIDevice currentDevice] model] rangeOfString:@"iPad"];
+        if(ipadRange.location != NSNotFound) {
+            //Do iPad stuff.
+            size = CGSizeMake(self.view.frame.size.width * 0.6, 102);
+        }else{
+            size = CGSizeMake(self.view.frame.size.width * 0.6, 60);
+        }
+        
     }
 //    return CGRectMake(self.view.frame.size.width / 2 - size.width / 2, self.pageControl.frame.origin.y - size.height, size.width, size.height);
     
+    
+    
+    
     return CGRectMake(0, self.view.frame.size.height - size.height, self.view.frame.size.width, size.height);
+    
 }
 
 #pragma mark - UIScrollViewDelegate

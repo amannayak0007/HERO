@@ -54,14 +54,27 @@ class socialVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.homeTableView.reloadData()
         FIRDatabase.database().reference().child("social").observe(.childAdded, with: { (snapshot:FIRDataSnapshot) in
             
-            if let dictionary = snapshot.value as? [String: AnyObject] {
-                let post = Posts()
-                post.setValuesForKeys(dictionary)
-                self.posts.append(post)
+            guard let dictionary = snapshot.value as? [String: AnyObject] else {
+                return
+            }
+            
+            self.posts.append(Posts(dictionary: dictionary))
+            DispatchQueue.main.async(execute: {
+
                 self.posts.sort(by: {$0.timestamp! > $1.timestamp!})
                 self.homeTableView.reloadData()
                 self.homeTableView.stopPullRefreshEver()
-            }
+
+            })
+            
+//            if let dictionary = snapshot.value as? [String: AnyObject] {
+//                let post = Posts()
+//                post.setValuesForKeys(dictionary)
+//                self.posts.append(post)
+//                self.posts.sort(by: {$0.timestamp! > $1.timestamp!})
+//                self.homeTableView.reloadData()
+//                self.homeTableView.stopPullRefreshEver()
+//            }
             
         }){(error) in
             

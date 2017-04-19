@@ -238,14 +238,21 @@ class MatchesViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         //gets users from Firebase
         FIRDatabase.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
             
-            if let dictionary = snapshot.value as? [String: AnyObject] {
-                let user = User()
-                user.id = snapshot.key //gets ID from the user
-                
-                //if you use this setter, your app will crash if your class properties don't exavtly match up with the Firebase dictionary keys
-                user.setValuesForKeys(dictionary)
-                self.users.append(user)
-                
+            guard let dictionary = snapshot.value as? [String: AnyObject] else {
+                return
+            }
+            let user = User(dictionary: dictionary)
+            self.users.append(user)
+
+            
+//            if let dictionary = snapshot.value as? [String: AnyObject] {
+//                let user = User()
+//                user.id = snapshot.key //gets ID from the user
+//                
+//                //if you use this setter, your app will crash if your class properties don't exavtly match up with the Firebase dictionary keys
+//                user.setValuesForKeys(dictionary)
+//                self.users.append(user)
+            
 //                print("\(dictionary["displayName"] as! String)")
                 
                 // Calculate DOB
@@ -275,7 +282,6 @@ class MatchesViewController: UIViewController, MKMapViewDelegate, CLLocationMana
                 
                 self.mapView.addAnnotation(JPSThumbnailAnnotation(thumbnail: thumbnail))
             
-            }
             
             }, withCancel: nil)
     }

@@ -708,16 +708,10 @@ an organ donation?</string>
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Your Story" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnw-4w-KU0">
-                                                    <rect key="frame" x="68" y="37" width="300" height="30"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d5W-08-w5k">
-                                                    <rect key="frame" x="68" y="75" width="300" height="160"/>
+                                                <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d5W-08-w5k">
+                                                    <rect key="frame" x="68" y="75" width="299" height="160"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="160" id="Apg-tF-pAn"/>
-                                                        <constraint firstAttribute="width" constant="300" id="S0o-vr-x2y"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwe-9e-TQc">
@@ -747,8 +741,14 @@ an organ donation?</string>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Story" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnw-4w-KU0">
+                                                    <rect key="frame" x="68" y="37" width="299" height="30"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="d5W-08-w5k" firstAttribute="trailing" secondItem="ibn-1h-S7f" secondAttribute="trailingMargin" id="9Ai-dR-lnQ"/>
                                                 <constraint firstItem="d5W-08-w5k" firstAttribute="top" secondItem="dnw-4w-KU0" secondAttribute="bottom" constant="8" id="NTe-Co-5Qk"/>
                                                 <constraint firstItem="d5W-08-w5k" firstAttribute="trailing" secondItem="dnw-4w-KU0" secondAttribute="trailing" id="OD2-1P-55q"/>
                                                 <constraint firstItem="zbx-M5-ypv" firstAttribute="top" secondItem="ibn-1h-S7f" secondAttribute="topMargin" id="atN-QI-mmy"/>
@@ -759,7 +759,7 @@ an organ donation?</string>
                                                 <constraint firstItem="S7B-jY-uhU" firstAttribute="top" secondItem="ibn-1h-S7f" secondAttribute="topMargin" id="jx0-A5-9fV"/>
                                                 <constraint firstItem="dnw-4w-KU0" firstAttribute="leading" secondItem="S7B-jY-uhU" secondAttribute="trailing" constant="10" id="knq-Ta-iMA"/>
                                                 <constraint firstItem="dnw-4w-KU0" firstAttribute="leading" secondItem="Qwe-9e-TQc" secondAttribute="leading" id="l5k-B2-1a7"/>
-                                                <constraint firstAttribute="bottom" secondItem="d5W-08-w5k" secondAttribute="bottom" constant="7" id="lJF-v1-APg"/>
+                                                <constraint firstAttribute="bottom" secondItem="d5W-08-w5k" secondAttribute="bottom" constant="14.5" id="lJF-v1-APg"/>
                                                 <constraint firstItem="dnw-4w-KU0" firstAttribute="top" secondItem="Qwe-9e-TQc" secondAttribute="bottom" constant="3" id="uiy-DA-9f9"/>
                                                 <constraint firstItem="Qwe-9e-TQc" firstAttribute="top" secondItem="ibn-1h-S7f" secondAttribute="topMargin" id="vMO-ob-9b1"/>
                                             </constraints>
@@ -794,7 +794,7 @@ an organ donation?</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ic-Wz-Bc6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="81" y="4189"/>
+            <point key="canvasLocation" x="80.799999999999997" y="4188.7556221889063"/>
         </scene>
         <!--Hero InfoVC-->
         <scene sceneID="3Zh-TR-Mds">
@@ -2070,7 +2070,7 @@ an organ donation?</string>
                 <navigationController storyboardIdentifier="Navi" automaticallyAdjustsScrollViewInsets="NO" id="VMU-51-Dss" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="profiles" id="cQk-ZI-4OK"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3ta-kY-efo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3ta-kY-efo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -3064,15 +3064,14 @@ an organ donation?</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Story" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9S-Zq-eGL">
-                                                    <rect key="frame" x="68" y="37" width="300" height="30"/>
+                                                    <rect key="frame" x="68" y="37" width="299" height="30"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CkW-2T-9rs">
-                                                    <rect key="frame" x="68" y="75" width="300" height="160"/>
+                                                    <rect key="frame" x="68" y="75" width="299" height="160"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="160" id="bqw-A0-rpi"/>
-                                                        <constraint firstAttribute="width" constant="300" id="y8N-tr-dK5"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncg-vE-elo">
@@ -3108,6 +3107,7 @@ an organ donation?</string>
                                                 <constraint firstItem="CkW-2T-9rs" firstAttribute="leading" secondItem="F9S-Zq-eGL" secondAttribute="leading" id="6wb-1A-IKE"/>
                                                 <constraint firstAttribute="bottom" secondItem="CkW-2T-9rs" secondAttribute="bottom" constant="14" id="8ix-8z-YT8"/>
                                                 <constraint firstItem="ncg-vE-elo" firstAttribute="leading" secondItem="F9S-Zq-eGL" secondAttribute="leading" id="8pc-c8-MF6"/>
+                                                <constraint firstItem="CkW-2T-9rs" firstAttribute="trailing" secondItem="H02-Xa-vbd" secondAttribute="trailingMargin" id="Bpw-f7-rwe"/>
                                                 <constraint firstItem="CkW-2T-9rs" firstAttribute="trailing" secondItem="F9S-Zq-eGL" secondAttribute="trailing" id="Ftt-qH-lYc"/>
                                                 <constraint firstItem="ncg-vE-elo" firstAttribute="top" secondItem="H02-Xa-vbd" secondAttribute="topMargin" id="Hk9-Bt-SG1"/>
                                                 <constraint firstItem="1Hk-h1-iAC" firstAttribute="top" secondItem="H02-Xa-vbd" secondAttribute="topMargin" id="NuD-Fb-b6U"/>
@@ -3150,14 +3150,14 @@ an organ donation?</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w3D-dl-sOV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="825" y="2188"/>
+            <point key="canvasLocation" x="824.79999999999995" y="2187.2563718140932"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tfj-L6-51k">
             <objects>
                 <navigationController storyboardIdentifier="signupnav" automaticallyAdjustsScrollViewInsets="NO" id="u7R-tE-8yb" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="HwI-g4-i46">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HwI-g4-i46">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -3504,7 +3504,7 @@ an organ donation?</string>
                 <navigationController storyboardIdentifier="searchNavi" automaticallyAdjustsScrollViewInsets="NO" id="lZZ-Ze-MJA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" image="search" id="Hc7-6s-oxp"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Iwc-Ix-x5X">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Iwc-Ix-x5X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -3520,7 +3520,7 @@ an organ donation?</string>
         <!--Hero Social-->
         <scene sceneID="hP7-hq-0qb">
             <objects>
-                <viewController id="PvH-4G-78t" customClass="socialVC" customModule="HERO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PvH-4G-78t" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4pw-pq-h0D"/>
                         <viewControllerLayoutGuide type="bottom" id="D2x-Ly-mcH"/>
@@ -3639,21 +3639,14 @@ an organ donation?</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hero Social" id="qSf-wK-wbV">
-                        <barButtonItem key="leftBarButtonItem" image="heronav" id="wUC-JE-Ylv">
-                            <connections>
-                                <action selector="heroAction:" destination="PvH-4G-78t" id="uQY-RT-HqD"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" image="heronav" id="wUC-JE-Ylv"/>
                         <barButtonItem key="rightBarButtonItem" image="writepost" style="plain" id="eEt-gz-x1C"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <connections>
-                        <outlet property="collectionView" destination="QLS-Z2-M5H" id="AeM-PZ-v78"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7HM-85-VVS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2527" y="1512"/>
+            <point key="canvasLocation" x="7641" y="2572"/>
         </scene>
         <!--FavoritesVC-->
         <scene sceneID="fVy-8l-acs">
@@ -3702,7 +3695,7 @@ an organ donation?</string>
                 <navigationController storyboardIdentifier="socialNavi" automaticallyAdjustsScrollViewInsets="NO" id="Zg1-x2-fWp" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Social" image="socials" id="eKj-BY-7bl"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4za-J3-Dg2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4za-J3-Dg2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4039,7 +4032,7 @@ an organ donation?</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LUJ-aL-3Nn" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="nWm-VR-Sd6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nWm-VR-Sd6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4103,7 +4096,7 @@ an organ donation?</string>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="maH-eK-seL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="maH-eK-seL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4124,7 +4117,7 @@ an organ donation?</string>
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Exq-MF-ewP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Exq-MF-ewP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4143,7 +4136,7 @@ an organ donation?</string>
                 <navigationController storyboardIdentifier="initialNav" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="6hm-lf-qDE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uu6-Ba-UIB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uu6-Ba-UIB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4453,7 +4446,7 @@ an organ donation?</string>
             <objects>
                 <navigationController storyboardIdentifier="termsNav" automaticallyAdjustsScrollViewInsets="NO" id="PVZ-Za-1XU" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Oz3-d4-sv0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Oz3-d4-sv0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4490,14 +4483,13 @@ an organ donation?</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Story" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIS-1K-wkR">
-                                                    <rect key="frame" x="68" y="37" width="300" height="30"/>
+                                                    <rect key="frame" x="68" y="37" width="299" height="30"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Ej-br-pwg">
-                                                    <rect key="frame" x="68" y="75" width="300" height="160"/>
+                                                    <rect key="frame" x="68" y="75" width="299" height="160"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="300" id="8Jf-u8-oTQ"/>
                                                         <constraint firstAttribute="height" constant="160" id="f7p-8u-niS"/>
                                                     </constraints>
                                                 </imageView>
@@ -4537,6 +4529,7 @@ an organ donation?</string>
                                                 <constraint firstItem="LIS-1K-wkR" firstAttribute="top" secondItem="cUa-Gf-JIc" secondAttribute="bottom" constant="3" id="S5k-Eg-vXO"/>
                                                 <constraint firstItem="cUa-Gf-JIc" firstAttribute="top" secondItem="cc8-5R-xmO" secondAttribute="topMargin" id="Teg-QJ-xhp"/>
                                                 <constraint firstItem="6Ej-br-pwg" firstAttribute="top" secondItem="LIS-1K-wkR" secondAttribute="bottom" constant="8" id="crc-cr-yAX"/>
+                                                <constraint firstItem="6Ej-br-pwg" firstAttribute="trailing" secondItem="cc8-5R-xmO" secondAttribute="trailingMargin" id="j5K-SG-ceQ"/>
                                                 <constraint firstItem="49L-3r-mUO" firstAttribute="top" secondItem="cc8-5R-xmO" secondAttribute="topMargin" id="kUI-fg-nXT"/>
                                                 <constraint firstItem="kso-iw-vdU" firstAttribute="leading" secondItem="cc8-5R-xmO" secondAttribute="leadingMargin" id="oWp-B1-IWL"/>
                                                 <constraint firstItem="6Ej-br-pwg" firstAttribute="leading" secondItem="LIS-1K-wkR" secondAttribute="leading" id="pfW-bD-0d6"/>
@@ -4588,7 +4581,7 @@ an organ donation?</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HsH-8x-Yib" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1210" y="1512"/>
+            <point key="canvasLocation" x="-1210.4000000000001" y="1510.7946026986508"/>
         </scene>
     </scenes>
     <resources>

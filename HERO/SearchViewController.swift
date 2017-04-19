@@ -86,8 +86,16 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         searchController.searchBar.delegate = self
         definesPresentationContext = true
         searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.showsCancelButton = true
+        searchController.searchBar.searchBarStyle = .minimal
         
-        self.navigationItem.titleView = searchController.searchBar
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = UIColor.white
+
+        let searchView = UIView(frame: searchController.searchBar.bounds)
+        searchView.addSubview(searchController.searchBar)
+        
+        self.navigationItem.titleView = searchView
+        self.navigationItem.titleView?.tintColor = UIColor.white
         self.navigationItem.rightBarButtonItem = nil
         
         searchController.isActive = true
@@ -116,8 +124,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             FIRDatabase.database().reference().child("users").queryOrdered(byChild: "donorORrecipient").queryEqual(toValue: "Hero").observe(.childAdded, with: { (snapshot) in
                 
                 if let dictionary = snapshot.value as? [String: AnyObject] {
-                    let user = User()
-                    user.setValuesForKeys(dictionary)
+                    let user = User(dictionary: dictionary)
+//                    user.setValuesForKeys(dictionary)
                     self.users.append(user)
                     //                        print(dictionary)
                     
@@ -145,8 +153,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             FIRDatabase.database().reference().child("users").queryOrdered(byChild: "donorORrecipient").queryEqual(toValue: "Recipient").observe(.childAdded, with: { (snapshot) in
                 
                 if let dictionary = snapshot.value as? [String: AnyObject] {
-                    let user = User()
-                    user.setValuesForKeys(dictionary)
+                    let user = User(dictionary: dictionary)
+//                    user.setValuesForKeys(dictionary)
                     self.users.append(user)
                     //                        print(dictionary)
                     
@@ -179,8 +187,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         FIRDatabase.database().reference().child("users").queryOrdered(byChild: "donorORrecipient").queryEqual(toValue: "Hero").observe(.childAdded, with: { (snapshot) in
             
             if let dictionary = snapshot.value as? [String: AnyObject] {
-                let user = User()
-                user.setValuesForKeys(dictionary)
+                let user = User(dictionary: dictionary)
+//                user.setValuesForKeys(dictionary)
                 self.users.append(user)
                 //                        print(dictionary)
                 

@@ -12,6 +12,16 @@
     {
       "idiom" : "universal",
       "scale" : "3x"
+    },
+    {
+      "idiom" : "ipad",
+      "filename" : "getstarted1.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "ipad",
+      "filename" : "getstarted2.png",
+      "scale" : "2x"
     }
   ],
   "info" : {

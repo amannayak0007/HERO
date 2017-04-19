@@ -82,10 +82,10 @@ class pairedKidney3: UIViewController {
         FIRDatabase.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
             
             if let dictionary = snapshot.value as? [String: AnyObject] {
-                let user = User()
+                let user = User(dictionary: dictionary)
                 user.id = snapshot.key //gets ID from the user
                 
-                user.setValuesForKeys(dictionary)
+//                user.setValuesForKeys(dictionary)
                 self.users.append(user)
             }
         }, withCancel: nil)

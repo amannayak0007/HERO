@@ -55,15 +55,27 @@ class StoryTableViewController: UIViewController,UITableViewDelegate,UITableView
         self.homeTableView.reloadData()
         FIRDatabase.database().reference().child("posts").child(FIRAuth.auth()!.currentUser!.uid).observe(.childAdded, with: { (snapshot:FIRDataSnapshot) in
             
-            if let dictionary = snapshot.value as? [String: AnyObject] {
-                let post = Posts()
-                post.setValuesForKeys(dictionary)
-                self.posts.append(post)
+            guard let dictionary = snapshot.value as? [String: AnyObject] else {
+                return
+            }
+            
+            self.posts.append(Posts(dictionary: dictionary))
+            DispatchQueue.main.async(execute: {
+                
                 self.posts.sort(by: {$0.timestamp! > $1.timestamp!})
                 self.homeTableView.reloadData()
+                self.homeTableView.stopPullRefreshEver()
                 
-//            self.posts.append(snapshot.value as! NSDictionary)
-            }
+            })
+//            if let dictionary = snapshot.value as? [String: AnyObject] {
+//                let post = Posts()
+//                post.setValuesForKeys(dictionary)
+//                self.posts.append(post)
+//                self.posts.sort(by: {$0.timestamp! > $1.timestamp!})
+//                self.homeTableView.reloadData()
+//                
+////            self.posts.append(snapshot.value as! NSDictionary)
+//            }
 //            self.homeTableView.insertRows(at: [IndexPath(row:0,section:0)], with: UITableViewRowAnimation.automatic)
             
         }){(error) in

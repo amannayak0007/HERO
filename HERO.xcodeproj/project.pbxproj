@@ -385,7 +385,6 @@
 				1F44B9731E87926800491AA3 /* HERO.entitlements */,
 				1F1980BE1DA5AE9300E0C7D9 /* HERO-Bridging-Header.h */,
 				1F02BE441D9F54C000817F66 /* Assets.xcassets */,
-				1F7A711F1DB8ACB500056176 /* SlideMenu */,
 			);
 			path = HERO;
 			sourceTree = "<group>";
@@ -457,11 +456,11 @@
 			isa = PBXGroup;
 			children = (
 				1F4980A31E8D11780000EF82 /* terms.pdf */,
-				1FFA6F8D1E8632FC0026D28E /* AutoComplete */,
 				1F0893501E82CBA00061FBDA /* SplachScreenAnimationViewController.swift */,
-				1F8B83941E80597300A789DA /* Font */,
 				1F2574EA1DBAA05B00460926 /* Pulsator.swift */,
 				1F0E1FE21DC320A600AD7DAB /* GSImageViewerController.swift */,
+				1FFA6F8D1E8632FC0026D28E /* AutoComplete */,
+				1F8B83941E80597300A789DA /* Font */,
 				1FD21B101E4F43BA00D45937 /* IQKeyboardManager */,
 				1FD21B351E4F43BA00D45937 /* ZWIntroductionViewController */,
 				1F24C98B1DCF7C7700B7AF7A /* MultistepSlider */,
@@ -471,6 +470,7 @@
 				1F3C0F3C1DB711E200D12820 /* CPImageViewer */,
 				1F19459A1DABA9480091FDC4 /* SJSegmentedScrollView */,
 				1F27E9121DB9EC40004E1064 /* SVProgressHUD */,
+				1F7A711F1DB8ACB500056176 /* SlideMenu */,
 			);
 			name = "Supporting File";
 			path = HERO;
@@ -1118,6 +1118,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "HERO-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1145,6 +1146,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "HERO-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

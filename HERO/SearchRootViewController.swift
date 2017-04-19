@@ -186,21 +186,33 @@ class SearchRootViewController: UIViewController {
     func fetchUser() {
         SVProgressHUD.show()
     FIRDatabase.database().reference().child("users").child(self.uid!).observeSingleEvent(of: .value) { (snapshot:FIRDataSnapshot) in
-            
-            if let dictionary = snapshot.value as? [String: AnyObject] {
-                
-                let users = User()
-                users.setValuesForKeys(dictionary)
-                
-                print(users.displayName)
-                self.user = users
-                
-                self.title = self.user?.displayName
-                
-                self.Setupsegment()
-                SVProgressHUD.dismiss()
-
+        
+        guard let dictionary = snapshot.value as? [String: AnyObject] else {
+            return
         }
+        let users = User(dictionary: dictionary)
+        
+        self.user = users
+        
+        self.title = self.user?.displayName
+        
+        self.Setupsegment()
+        SVProgressHUD.dismiss()
+        
+//            if let dictionary = snapshot.value as? [String: AnyObject] {
+//                
+//                let users = User()
+//                users.setValuesForKeys(dictionary)
+//                
+//                print(users.displayName)
+//                self.user = users
+//                
+//                self.title = self.user?.displayName
+//                
+//                self.Setupsegment()
+//                SVProgressHUD.dismiss()
+//
+//        }
       }
 
     }

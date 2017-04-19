@@ -79,9 +79,9 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
         setupKeyboardObservers()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        inputContainerView.inputTextField.becomeFirstResponder()
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        inputContainerView.inputTextField.becomeFirstResponder()
+//    }
     
     lazy var inputContainerView: ChatInputContainerView = {
         let chatInputContainerView = ChatInputContainerView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50))

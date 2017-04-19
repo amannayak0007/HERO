@@ -30,14 +30,27 @@ class SearchStoryViewController: UIViewController, UITableViewDelegate, UITableV
             //get all the posts that are made by the user
             self.databaseRef.child("posts").child(self.user!.uid!).observe(.childAdded, with: { (snapshot:FIRDataSnapshot) in
                 
-                if let dictionary = snapshot.value as? [String: AnyObject] {
-                    let post = Posts()
-                    post.setValuesForKeys(dictionary)
-                    self.posts.append(post)
-                    self.posts.sort(by: {$0.timestamp! > $1.timestamp!})
-                    self.homeTableView.reloadData()
+                guard let dictionary = snapshot.value as? [String: AnyObject] else {
+                    return
                 }
                 
+                self.posts.append(Posts(dictionary: dictionary))
+                DispatchQueue.main.async(execute: {
+                    
+                    self.posts.sort(by: {$0.timestamp! > $1.timestamp!})
+                    self.homeTableView.reloadData()
+                    self.homeTableView.stopPullRefreshEver()
+                    
+                })
+                
+//                if let dictionary = snapshot.value as? [String: AnyObject] {
+//                    let post = Posts()
+//                    post.setValuesForKeys(dictionary)
+//                    self.posts.append(post)
+//                    self.posts.sort(by: {$0.timestamp! > $1.timestamp!})
+//                    self.homeTableView.reloadData()
+//                }
+//                
 //                self.posts.append(snapshot.value as! NSDictionary)
 //                self.homeTableView.insertRows(at: [IndexPath(row:0,section:0)], with: UITableViewRowAnimation.automatic)
                 
